@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, /* CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  */} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 
@@ -16,6 +16,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { DenunciaComponent } from './pages/denuncia/denuncia.component';
 import { FormDenunciaComponent } from './pages/denuncia/form-denuncia/form-denuncia.component';
@@ -42,8 +45,15 @@ import { FormDenunciaComponent } from './pages/denuncia/form-denuncia/form-denun
     MatToolbarModule,
     MatButtonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatStepperModule
   ],
+/*   schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ], */
   providers: [],
   bootstrap: [AppComponent]
 })
