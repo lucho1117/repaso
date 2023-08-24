@@ -27,6 +27,11 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { DenunciaComponent } from './pages/denuncia/denuncia.component';
 import { FormDenunciaComponent } from './pages/denuncia/form-denuncia/form-denuncia.component';
+import { DenuncianteComponent } from './pages/denuncia/form-denuncia/denunciante/denunciante.component';
+import { VictimaComponent } from './pages/denuncia/form-denuncia/victima/victima.component';
+import { DenunciadoComponent } from './pages/denuncia/form-denuncia/denunciado/denunciado.component';
+import { HechosComponent } from './pages/denuncia/form-denuncia/hechos/hechos.component';
+import { FinalizacionComponent } from './pages/denuncia/form-denuncia/finalizacion/finalizacion.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { FormDenunciaComponent } from './pages/denuncia/form-denuncia/form-denun
     NavbarComponent,
     FooterComponent,
     DenunciaComponent,
-    FormDenunciaComponent
+    FormDenunciaComponent,
+    DenuncianteComponent,
+    VictimaComponent,
+    DenunciadoComponent,
+    HechosComponent,
+    FinalizacionComponent
   ],
   imports: [
     BrowserModule,
