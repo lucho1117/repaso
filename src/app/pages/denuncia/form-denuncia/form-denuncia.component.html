@@ -1,70 +1,288 @@
-<div class="text-center buttonAdd">
+<div class="text-center buttonReturn">
     <button mat-raised-button color="primary" [routerLink]="['../']" routerLinkActive="router-link-active" >REGRESAR</button>
 </div>
 
 <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
   </button>
-<mat-horizontal-stepper  [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Fill out your name</ng-template>
-          <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-        <form [formGroup]="secondFormGroup">
-          <mat-form-field>
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-      </mat-step>
-</mat-horizontal-stepper>
 
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button> -->
-  <!-- <mat-stepper [linear]="isLinear" #stepper>
-    
-    
+<mat-horizontal-stepper  [linear]="isLinear" #stepper>
+
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <ng-template matStepLabel>DENUNCIANTE</ng-template>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <mat-form-field>
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput  type="date" placeholder="Fecha de nacimiento" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-8">
+              <mat-form-field>
+                <mat-label>CUI</mat-label>
+                <input matInput type="number" placeholder="Ingrese su No de DPI" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Primer Nombre</mat-label>
+                <input matInput   placeholder="Primer Nombre" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Segundo Nombre</mat-label>
+                <input matInput placeholder="Segundo Nombre" formControlName="firstCtrl">
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Primer Apellido</mat-label>
+                <input matInput placeholder="Primer Apellido" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Segundo Apellido</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl">
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Otro Nombre</mat-label>
+                <input matInput placeholder="Otro Nombre" formControlName="firstCtrl">
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Apellido de Casada</mat-label>
+                <input matInput placeholder="Apellido de Casada" formControlName="firstCtrl">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2">
+              <mat-form-field>
+                <mat-label>Telefono</mat-label>
+                <input matInput type="number" placeholder="Telefono" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-2">
+              <mat-form-field>
+                <mat-label>Edad</mat-label>
+                <input matInput type="numbre" placeholder="Edad" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Email" formControlName="firstCtrl">
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Estado Civil</mat-label>
+                <mat-select  placeholder="Last name, First name" formControlName="firstCtrl" required>
+                  <mat-option value="volvo">Volvo</mat-option>
+                  <mat-option value="saab">saab</mat-option>
+                  <mat-option value="mercedes">mercedes</mat-option>
+                  <mat-option value="audi">audi</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Sexo</mat-label>
+                <mat-select  placeholder="Sexo" formControlName="firstCtrl">
+                  <mat-option value="volvo">Volvo</mat-option>
+                  <mat-option value="saab">saab</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-2">
+              <mat-form-field>
+                <mat-label>Departamento</mat-label>
+                <mat-select  placeholder="Departamento" formControlName="firstCtrl">
+                  <mat-option value="volvo">Volvo</mat-option>
+                  <mat-option value="saab">saab</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-2">
+              <mat-form-field>
+                <mat-label>Municipio</mat-label>
+                <mat-select  placeholder="Municipio" formControlName="firstCtrl">
+                  <mat-option value="volvo">Volvo</mat-option>
+                  <mat-option value="saab">saab</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm">
+              <mat-form-field>
+                <mat-label>Dirección</mat-label>
+                <input matInput placeholder="Dirección" formControlName="firstCtrl">
+              </mat-form-field>
+            </div>
+          </div>
         </div>
+
+        <mat-accordion class="example-headers-align" multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                INFORMACIÓN ADICIONAL
+              </mat-panel-title>
+              <mat-panel-description>
+                Ingrese información adicional
+                <!-- <mat-icon>account_circle</mat-icon> -->
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+        
+            <div class="row">
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Pueblo</mat-label>
+                  <mat-select  placeholder="Pueblo" formControlName="firstCtrl">
+                    <mat-option value="volvo">Volvo</mat-option>
+                    <mat-option value="saab">saab</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Idiona</mat-label>
+                  <mat-select  placeholder="Idiona" formControlName="firstCtrl" >
+                    <mat-option value="volvo">Volvo</mat-option>
+                    <mat-option value="saab">saab</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Religion</mat-label>
+                  <mat-select placeholder="Religion" formControlName="firstCtrl">
+                    <mat-option value="volvo">Volvo</mat-option>
+                    <mat-option value="saab">saab</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Telefono No 2</mat-label>
+                  <input matInput type="number" placeholder="Telefono No 2" formControlName="firstCtrl" >
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Telefono No 3</mat-label>
+                  <input matInput  type="number" placeholder="Telefono No 3" formControlName="firstCtrl" >
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Profesión</mat-label>
+                  <mat-select placeholder="Profesión" formControlName="firstCtrl">
+                    <mat-option value="volvo">Volvo</mat-option>
+                    <mat-option value="saab">saab</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>No Colegiado</mat-label>
+                  <input matInput type="number" placeholder="No Colegiado" formControlName="firstCtrl" >
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-label>Pertenece a la comunidad LGBTQ+ ?</mat-label>
+                  <mat-select placeholder="Pertenece a la comunidad LGBTQ+ ?" formControlName="firstCtrl" >
+                    <mat-option value="SI">SI</mat-option>
+                    <mat-option value="NO">NO</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+        
+          </mat-expansion-panel>
+        </mat-accordion>
+        
+
+        <div class="text-center ">
+          <!-- <button mat-button matStepperNext>Next</button> -->
+          <div class="button-option">
+            <button mat-fab color="primary"  matStepperNext>
+              <mat-icon>keyboard_tab</mat-icon>
+            </button>
+          </div>
+        </div>
+
       </form>
     </mat-step>
+
+
+
+
+
+
+
+      
     <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
       <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>VICTIMA</ng-template>
         <mat-form-field>
           <mat-label>Address</mat-label>
           <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
+                  required>
+        </mat-form-field>
+        <div class="text-center button-option">
+         <!--  <button mat-button matStepperPrevious>Back</button> -->
+          <button mat-fab color="primary"   matStepperPrevious class="button-option">
+            <mat-icon>keyboard_return</mat-icon>
+          </button>
+
+         <!--  <button mat-button matStepperNext>Next</button> -->
+          <button mat-fab color="primary"  matStepperNext class="button-option">
+            <mat-icon>keyboard_tab</mat-icon>
+          </button>
+
+        </div>
+      </form>
+    </mat-step>
+
+
+
+
+
+
+
+
+
+
+
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>DENUNCIADO</ng-template>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                  required>
         </mat-form-field>
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -72,12 +290,53 @@
         </div>
       </form>
     </mat-step>
+
+
+
+
+
+
+
+
+
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>HECHOS </ng-template>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                  required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+
+
+
+
+
+
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
+      <ng-template matStepLabel>FINALIZACION</ng-template>
       <p>You are now done.</p>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
-  </mat-stepper> -->
+
+
+
+
+
+
+
+</mat-horizontal-stepper>
+
