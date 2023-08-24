@@ -13,6 +13,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+
+import { DenunciaComponent } from './pages/denuncia/denuncia.component';
+import { FormDenunciaComponent } from './pages/denuncia/form-denuncia/form-denuncia.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { MatButtonModule } from '@angular/material/button';
     PrincipalComponent,
     FacturaComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    DenunciaComponent,
+    FormDenunciaComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
 
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
