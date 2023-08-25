@@ -22,12 +22,9 @@ export class FormDenunciaComponent implements OnInit {
   isLinear = false;
   
   constructor(private _formBuilder: FormBuilder) {
-      
-    console.log(this.isLinear)
   }
 
   ngOnInit(): void {
-    console.log(this.isLinear)
   }
 
 }

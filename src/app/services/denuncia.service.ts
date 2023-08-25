@@ -6,11 +6,16 @@ import { HttpClient } from  '@angular/common/http';
 })
 export class DenunciaService {
 
-  private url = 'http://localhost:10746/denuncia/buzon';
+  private baseUrl = 'http://localhost:10746';
 
   constructor( private http: HttpClient) { }
 
   getListDenuncia( params: any ) {
-    return this.http.get( this.url, { params } );
+    return this.http.get<any>( this.baseUrl + '/denuncia/buzon', { params } );
   }
+
+  getListCatalogos( ) {
+    return this.http.get<any>( this.baseUrl + '/list/CatalogoGeneral' );
+  }
+
 }

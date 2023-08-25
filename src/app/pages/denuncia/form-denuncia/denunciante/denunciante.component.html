@@ -78,10 +78,7 @@
           <mat-form-field>
             <mat-label>Estado Civil</mat-label>
             <mat-select  placeholder="Last name, First name" formControlName="firstCtrl" required>
-              <mat-option value="volvo">Volvo</mat-option>
-              <mat-option value="saab">saab</mat-option>
-              <mat-option value="mercedes">mercedes</mat-option>
-              <mat-option value="audi">audi</mat-option>
+              <mat-option *ngFor="let estado of listEstadoCivilCatalogo" value="{{estado.id}}" >{{estado.name}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -92,17 +89,15 @@
           <mat-form-field>
             <mat-label>Sexo</mat-label>
             <mat-select  placeholder="Sexo" formControlName="firstCtrl">
-              <mat-option value="volvo">Volvo</mat-option>
-              <mat-option value="saab">saab</mat-option>
+              <mat-option *ngFor="let sexo of listSexoCatalogo" value="{{sexo.id}}" >{{sexo.name}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div class="col-sm-2">
           <mat-form-field>
             <mat-label>Departamento</mat-label>
-            <mat-select  placeholder="Departamento" formControlName="firstCtrl">
-              <mat-option value="volvo">Volvo</mat-option>
-              <mat-option value="saab">saab</mat-option>
+            <mat-select  placeholder="Departamento" formControlName="firstCtrl" >
+              <mat-option *ngFor="let departamento of listDepartamentoCaralogo" value="{{departamento.nombre}}" (click)="handleInputChange(departamento)" >{{departamento.nombre}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -110,8 +105,7 @@
           <mat-form-field>
             <mat-label>Municipio</mat-label>
             <mat-select  placeholder="Municipio" formControlName="firstCtrl">
-              <mat-option value="volvo">Volvo</mat-option>
-              <mat-option value="saab">saab</mat-option>
+              <mat-option *ngFor="let municipio of listMunicipioCaralogo" value="{{municipio.nombre}}"  >{{municipio.nombre}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -141,8 +135,7 @@
             <mat-form-field>
               <mat-label>Pueblo</mat-label>
               <mat-select  placeholder="Pueblo" formControlName="firstCtrl">
-                <mat-option value="volvo">Volvo</mat-option>
-                <mat-option value="saab">saab</mat-option>
+                <mat-option *ngFor="let pueblo of listPuebloCaralogo" value="{{pueblo.nombre}}" >{{pueblo.nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -150,8 +143,7 @@
             <mat-form-field>
               <mat-label>Idiona</mat-label>
               <mat-select  placeholder="Idiona" formControlName="firstCtrl" >
-                <mat-option value="volvo">Volvo</mat-option>
-                <mat-option value="saab">saab</mat-option>
+                <mat-option *ngFor="let idioma of listIdiomaCaralogo" value="{{idioma.nombre}}" >{{idioma.nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -159,8 +151,7 @@
             <mat-form-field>
               <mat-label>Religion</mat-label>
               <mat-select placeholder="Religion" formControlName="firstCtrl">
-                <mat-option value="volvo">Volvo</mat-option>
-                <mat-option value="saab">saab</mat-option>
+                <mat-option *ngFor="let religion of listReligionCaralogo" value="{{religion.nombre}}" >{{religion.nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -182,10 +173,7 @@
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Profesión</mat-label>
-              <mat-select placeholder="Profesión" formControlName="firstCtrl">
-                <mat-option value="volvo">Volvo</mat-option>
-                <mat-option value="saab">saab</mat-option>
-              </mat-select>
+              <input matInput  placeholder="Profesión" formControlName="firstCtrl" >
             </mat-form-field>
           </div>
         </div>
