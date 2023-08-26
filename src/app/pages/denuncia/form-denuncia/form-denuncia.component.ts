@@ -9,11 +9,37 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class FormDenunciaComponent implements OnInit {
 
-  firstFormGroup = this._formBuilder.group({
+  formPersona = this._formBuilder.group({
+    tipo:            [''],
+    nacionalidad:    [''],
+    cui:             ['', Validators.required],
+    pasaporte:       [''],
+    pais:            [''],
     fechaNacimiento: ['', Validators.required],
-    cui: ['', Validators.required],
-    firstCtrl: ['', Validators.required],
-
+    primerNombre:    ['', Validators.required],
+    segundoNombre:   [''],
+    otroNombre:      [''],
+    primerApellido:  ['', Validators.required],
+    segundoApellido: [''],
+    casadaApellido:  [''],
+    edad:            [0, Validators.required],
+    sexo:            ['', Validators.required],
+    estadoCivil:     ['', Validators.required],
+    direccion:       [''],
+    idMunicipio:     [''],
+    municipio:       [''],
+    idDepartamento:  [''],
+    departamento:    [''],
+    correo:          [''],
+    profesion:       [''],
+    colegiado:       [''],
+    idioma:          [''],
+    religion:        [''],
+    pueblo:          [''],
+    lgtbq:           [''],
+    telefono1:       ['', Validators.required],
+    telefono2:       [''],
+    telefono3:       [''],
   });
   
   secondFormGroup = this._formBuilder.group({

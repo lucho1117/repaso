@@ -1,4 +1,4 @@
-<form [formGroup]="firstFormGroup">
+<form [formGroup]="formPersona">
 
     <div class="container">
       <div class="row">
@@ -20,37 +20,37 @@
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Primer Nombre</mat-label>
-            <input matInput   placeholder="Primer Nombre" formControlName="firstCtrl" required>
+            <input matInput   placeholder="Primer Nombre" formControlName="primerNombre" required>
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Segundo Nombre</mat-label>
-            <input matInput placeholder="Segundo Nombre" formControlName="firstCtrl">
+            <input matInput placeholder="Segundo Nombre" formControlName="segundoNombre">
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Primer Apellido</mat-label>
-            <input matInput placeholder="Primer Apellido" formControlName="firstCtrl" required>
+            <input matInput placeholder="Primer Apellido" formControlName="primerApellido" required>
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Segundo Apellido</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl">
+            <input matInput placeholder="Last name, First name" formControlName="segundoApellido">
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Otro Nombre</mat-label>
-            <input matInput placeholder="Otro Nombre" formControlName="firstCtrl">
+            <input matInput placeholder="Otro Nombre" formControlName="otroNombre">
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Apellido de Casada</mat-label>
-            <input matInput placeholder="Apellido de Casada" formControlName="firstCtrl">
+            <input matInput placeholder="Apellido de Casada" formControlName="casadaApellido">
           </mat-form-field>
         </div>
       </div>
@@ -59,25 +59,25 @@
         <div class="col-sm-2">
           <mat-form-field>
             <mat-label>Telefono</mat-label>
-            <input matInput type="number" placeholder="Telefono" formControlName="firstCtrl" required>
+            <input matInput type="number" placeholder="Telefono" formControlName="telefono1" required>
           </mat-form-field>
         </div>
         <div class="col-sm-2">
           <mat-form-field>
             <mat-label>Edad</mat-label>
-            <input matInput type="numbre" placeholder="Edad" formControlName="firstCtrl" required>
+            <input matInput type="numbre" placeholder="Edad" formControlName="edad" required>
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput type="email" placeholder="Email" formControlName="firstCtrl">
+            <input matInput type="email" placeholder="Email" formControlName="correo">
           </mat-form-field>
         </div>
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Estado Civil</mat-label>
-            <mat-select  placeholder="Last name, First name" formControlName="firstCtrl" required>
+            <mat-select  placeholder="Last name, First name" formControlName="estadoCivil" required>
               <mat-option *ngFor="let estado of listEstadoCivilCatalogo" value="{{estado.id}}" >{{estado.name}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -88,7 +88,7 @@
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Sexo</mat-label>
-            <mat-select  placeholder="Sexo" formControlName="firstCtrl">
+            <mat-select  placeholder="Sexo" formControlName="sexo">
               <mat-option *ngFor="let sexo of listSexoCatalogo" value="{{sexo.id}}" >{{sexo.name}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -96,7 +96,7 @@
         <div class="col-sm-2">
           <mat-form-field>
             <mat-label>Departamento</mat-label>
-            <mat-select  placeholder="Departamento" formControlName="firstCtrl" >
+            <mat-select  placeholder="Departamento" formControlName="departamento" >
               <mat-option *ngFor="let departamento of listDepartamentoCaralogo" value="{{departamento.nombre}}" (click)="handleInputChange(departamento)" >{{departamento.nombre}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -104,7 +104,7 @@
         <div class="col-sm-2">
           <mat-form-field>
             <mat-label>Municipio</mat-label>
-            <mat-select  placeholder="Municipio" formControlName="firstCtrl">
+            <mat-select  placeholder="Municipio" formControlName="municipio">
               <mat-option *ngFor="let municipio of listMunicipioCaralogo" value="{{municipio.nombre}}"  >{{municipio.nombre}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -112,7 +112,7 @@
         <div class="col-sm">
           <mat-form-field>
             <mat-label>Dirección</mat-label>
-            <input matInput placeholder="Dirección" formControlName="firstCtrl">
+            <input matInput placeholder="Dirección" formControlName="direccion">
           </mat-form-field>
         </div>
       </div>
@@ -134,7 +134,7 @@
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Pueblo</mat-label>
-              <mat-select  placeholder="Pueblo" formControlName="firstCtrl">
+              <mat-select  placeholder="Pueblo" formControlName="pueblo">
                 <mat-option *ngFor="let pueblo of listPuebloCaralogo" value="{{pueblo.nombre}}" >{{pueblo.nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -142,7 +142,7 @@
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Idiona</mat-label>
-              <mat-select  placeholder="Idiona" formControlName="firstCtrl" >
+              <mat-select  placeholder="Idiona" formControlName="idioma" >
                 <mat-option *ngFor="let idioma of listIdiomaCaralogo" value="{{idioma.nombre}}" >{{idioma.nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -150,7 +150,7 @@
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Religion</mat-label>
-              <mat-select placeholder="Religion" formControlName="firstCtrl">
+              <mat-select placeholder="Religion" formControlName="religion">
                 <mat-option *ngFor="let religion of listReligionCaralogo" value="{{religion.nombre}}" >{{religion.nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -161,19 +161,19 @@
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Telefono No 2</mat-label>
-              <input matInput type="number" placeholder="Telefono No 2" formControlName="firstCtrl" >
+              <input matInput type="number" placeholder="Telefono No 2" formControlName="telefono2" >
             </mat-form-field>
           </div>
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Telefono No 3</mat-label>
-              <input matInput  type="number" placeholder="Telefono No 3" formControlName="firstCtrl" >
+              <input matInput  type="number" placeholder="Telefono No 3" formControlName="telefono3" >
             </mat-form-field>
           </div>
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Profesión</mat-label>
-              <input matInput  placeholder="Profesión" formControlName="firstCtrl" >
+              <input matInput  placeholder="Profesión" formControlName="profesion" >
             </mat-form-field>
           </div>
         </div>
@@ -182,13 +182,13 @@
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>No Colegiado</mat-label>
-              <input matInput type="number" placeholder="No Colegiado" formControlName="firstCtrl" >
+              <input matInput type="number" placeholder="No Colegiado" formControlName="colegiado" >
             </mat-form-field>
           </div>
           <div class="col-sm-4">
             <mat-form-field>
               <mat-label>Pertenece a la comunidad LGBTQ+ ?</mat-label>
-              <mat-select placeholder="Pertenece a la comunidad LGBTQ+ ?" formControlName="firstCtrl" >
+              <mat-select placeholder="Pertenece a la comunidad LGBTQ+ ?" formControlName="lgtbq" >
                 <mat-option value="SI">SI</mat-option>
                 <mat-option value="NO">NO</mat-option>
               </mat-select>
@@ -210,3 +210,5 @@
     </div>
 
   </form>
+
+  <pre>{{ formPersona.value | json}}</pre>

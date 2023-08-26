@@ -9,7 +9,7 @@ import { sexoCatalogo, estadoCivilCatalogo } from 'src/app/utils/constantes';
 })
 export class DenuncianteComponent implements OnInit {
 
-  @Input() firstFormGroup:any;
+  @Input() formPersona:any;
 
   listPuebloCaralogo: any[] = [];
   listReligionCaralogo: any[] = [];
