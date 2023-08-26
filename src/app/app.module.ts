@@ -32,6 +32,7 @@ import { VictimaComponent } from './pages/denuncia/form-denuncia/victima/victima
 import { DenunciadoComponent } from './pages/denuncia/form-denuncia/denunciado/denunciado.component';
 import { HechosComponent } from './pages/denuncia/form-denuncia/hechos/hechos.component';
 import { FinalizacionComponent } from './pages/denuncia/form-denuncia/finalizacion/finalizacion.component';
+import { FormPersonaComponent } from './pages/denuncia/form-denuncia/common/form-persona/form-persona.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { FinalizacionComponent } from './pages/denuncia/form-denuncia/finalizaci
     VictimaComponent,
     DenunciadoComponent,
     HechosComponent,
-    FinalizacionComponent
+    FinalizacionComponent,
+    FormPersonaComponent
   ],
   imports: [
     BrowserModule,
