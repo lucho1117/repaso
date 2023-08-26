@@ -9,6 +9,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class FormDenunciaComponent implements OnInit {
 
+  infoDenunciante: any;
 
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
@@ -19,6 +20,11 @@ export class FormDenunciaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.infoDenunciante)
+  }
+
+  save() {
+    console.log(this.infoDenunciante)
   }
 
 }

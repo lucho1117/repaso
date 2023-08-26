@@ -8,16 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DenuncianteComponent implements OnInit {
 
-  @Input() formPersona:any;
-
-
+  @Input() infoDenunciante: any; 
 
   constructor( ) { }
 
   ngOnInit(): void {
     
   }
-
 
 
 }

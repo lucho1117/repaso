@@ -10,10 +10,10 @@
 
 <mat-horizontal-stepper  [linear]="isLinear" #stepper>
 
-    <mat-step>
+    <mat-step [stepControl]="infoDenunciante" >
     <!-- <mat-step > -->
       <ng-template matStepLabel>DENUNCIANTE</ng-template>
-      <app-denunciante ></app-denunciante>
+      <app-denunciante [infoDenunciante]="infoDenunciante"></app-denunciante>
       
     </mat-step>
 
@@ -126,3 +126,8 @@
 
 </mat-horizontal-stepper>
 
+
+
+<div class="text-center buttonReturn">
+  <button mat-raised-button color="primary" (click)="save()" >GUARDAR</button>
+</div>

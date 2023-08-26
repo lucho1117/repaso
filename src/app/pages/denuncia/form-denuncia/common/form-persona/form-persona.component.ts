@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DenunciaService } from 'src/app/services/denuncia.service';
 import { sexoCatalogo, estadoCivilCatalogo } from 'src/app/utils/constantes';
 import {FormBuilder, Validators} from '@angular/forms';
@@ -9,6 +9,8 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./form-persona.component.css']
 })
 export class FormPersonaComponent implements OnInit {
+
+  @Input() formValid: any;
 
   listPuebloCaralogo: any[] = [];
   listReligionCaralogo: any[] = [];
@@ -51,9 +53,13 @@ export class FormPersonaComponent implements OnInit {
     telefono3:       [''],
   });
   
-
+  
   constructor( private denunciaService: DenunciaService,
-              private _formBuilder: FormBuilder ) { }
+              private _formBuilder: FormBuilder ) { 
+
+                this.formValid = this.formPersona
+                
+              }
 
   ngOnInit(): void {
     this.getListCatalogos();
@@ -100,4 +106,8 @@ export class FormPersonaComponent implements OnInit {
     this.listMunicipioCaralogo = item.municipio;
   }
 
+
+  valid() {
+    this.formValid = this.formPersona
+  }
 }
