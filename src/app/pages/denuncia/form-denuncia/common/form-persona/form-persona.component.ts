@@ -110,7 +110,6 @@ export class FormPersonaComponent implements OnInit {
 
 
   valid() {
-   console.log("estoy aquii");
    this.infoFormulario.emit( this.formPersona );
   }
 }
