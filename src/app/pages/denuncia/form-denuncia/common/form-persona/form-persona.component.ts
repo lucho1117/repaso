@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DenunciaService } from 'src/app/services/denuncia.service';
 import { sexoCatalogo, estadoCivilCatalogo } from 'src/app/utils/constantes';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form-persona',
@@ -10,7 +10,8 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class FormPersonaComponent implements OnInit {
 
-  @Input() formValid: any;
+  @Input() formPersona: FormGroup;
+  @Output() infoFormulario = new EventEmitter<any>();
 
   listPuebloCaralogo: any[] = [];
   listReligionCaralogo: any[] = [];
@@ -19,50 +20,51 @@ export class FormPersonaComponent implements OnInit {
   listIdiomaCaralogo: any[] = [];
   listSexoCatalogo: any[] = sexoCatalogo;
   listEstadoCivilCatalogo: any[] = estadoCivilCatalogo;
-
-  formPersona = this._formBuilder.group({
-    tipo:            [''],
-    nacionalidad:    [''],
-    cui:             ['', Validators.required],
-    pasaporte:       [''],
-    pais:            [''],
-    fechaNacimiento: ['', Validators.required],
-    primerNombre:    ['', Validators.required],
-    segundoNombre:   [''],
-    otroNombre:      [''],
-    primerApellido:  ['', Validators.required],
-    segundoApellido: [''],
-    casadaApellido:  [''],
-    edad:            [0, Validators.required],
-    sexo:            ['', Validators.required],
-    estadoCivil:     ['', Validators.required],
-    direccion:       [''],
-    idMunicipio:     [''],
-    municipio:       [''],
-    idDepartamento:  [''],
-    departamento:    [''],
-    correo:          [''],
-    profesion:       [''],
-    colegiado:       [''],
-    idioma:          [''],
-    religion:        [''],
-    pueblo:          [''],
-    lgtbq:           [''],
-    telefono1:       ['', Validators.required],
-    telefono2:       [''],
-    telefono3:       [''],
-  });
-  
+ 
   
   constructor( private denunciaService: DenunciaService,
               private _formBuilder: FormBuilder ) { 
+               
 
-                this.formValid = this.formPersona
+              
                 
               }
 
   ngOnInit(): void {
     this.getListCatalogos();
+    this.formPersona = this._formBuilder.group({
+      tipo:            [''],
+      nacionalidad:    [''],
+      cui:             ['', Validators.required],
+      pasaporte:       [''],
+      pais:            [''],
+      fechaNacimiento: ['', Validators.required],
+      primerNombre:    ['', Validators.required],
+      segundoNombre:   [''],
+      otroNombre:      [''],
+      primerApellido:  ['', Validators.required],
+      segundoApellido: [''],
+      casadaApellido:  [''],
+      edad:            [0, Validators.required],
+      sexo:            ['', Validators.required],
+      estadoCivil:     ['', Validators.required],
+      direccion:       [''],
+      idMunicipio:     [''],
+      municipio:       [''],
+      idDepartamento:  [''],
+      departamento:    [''],
+      correo:          [''],
+      profesion:       [''],
+      colegiado:       [''],
+      idioma:          [''],
+      religion:        [''],
+      pueblo:          [''],
+      lgtbq:           [''],
+      telefono1:       ['', Validators.required],
+      telefono2:       [''],
+      telefono3:       [''],
+    });
+    this.infoFormulario.emit( this.formPersona );
   }
 
   getListCatalogos() {
@@ -108,6 +110,7 @@ export class FormPersonaComponent implements OnInit {
 
 
   valid() {
-    this.formValid = this.formPersona
+   console.log("estoy aquii");
+   this.infoFormulario.emit( this.formPersona );
   }
 }

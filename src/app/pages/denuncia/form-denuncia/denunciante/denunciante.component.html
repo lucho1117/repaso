@@ -1,1 +1,7 @@
-<app-form-persona [formValid]="infoDenunciante"></app-form-persona>
+<app-form-persona [formPersona]="formPersona" (infoFormulario)="formPersona = $event"></app-form-persona>
+
+
+
+<div class="text-center buttonReturn">
+    <button mat-raised-button color="primary" (click)="save()" >GUARDAR</button>
+  </div>

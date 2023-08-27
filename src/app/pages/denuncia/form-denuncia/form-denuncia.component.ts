@@ -1,5 +1,5 @@
 import { Component, OnInit,  } from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form-denuncia',
@@ -9,7 +9,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class FormDenunciaComponent implements OnInit {
 
-  infoDenunciante: any;
+  formPersona: FormGroup;
 
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
@@ -17,14 +17,15 @@ export class FormDenunciaComponent implements OnInit {
   isLinear = false;
   
   constructor(private _formBuilder: FormBuilder) {
+    this.formPersona = this._formBuilder.group({});
   }
 
   ngOnInit(): void {
-    console.log(this.infoDenunciante)
+   
   }
 
   save() {
-    console.log(this.infoDenunciante)
+    console.log(this.formPersona.value)
   }
 
 }
