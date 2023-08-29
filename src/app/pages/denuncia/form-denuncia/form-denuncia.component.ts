@@ -10,14 +10,16 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class FormDenunciaComponent implements OnInit {
 
   formPersona: FormGroup;
+  formHechos: FormGroup;
 
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
-  isLinear = false;
+  isLinear = true;
   
   constructor(private _formBuilder: FormBuilder) {
     this.formPersona = this._formBuilder.group({});
+    this.formHechos = this._formBuilder.group({});
   }
 
   ngOnInit(): void {
@@ -25,7 +27,10 @@ export class FormDenunciaComponent implements OnInit {
   }
 
   save() {
-    console.log(this.formPersona.value)
+    console.log(this.formPersona.value);
+    console.log(this.formPersona.valid);
+    console.log(this.formHechos.value);
+    console.log(this.formHechos.valid);
   }
 
 }

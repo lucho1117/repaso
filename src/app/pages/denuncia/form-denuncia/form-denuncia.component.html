@@ -21,9 +21,6 @@
 
 
 
-
-
-      
     <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>VICTIMA</ng-template>
@@ -53,12 +50,6 @@
 
 
 
-
-
-
-
-
-
     <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>DENUNCIADO</ng-template>
@@ -79,30 +70,10 @@
 
 
 
-
-
-
-
-
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-      <form [formGroup]="secondFormGroup">
+    <mat-step [stepControl]="formHechos" >
         <ng-template matStepLabel>HECHOS </ng-template>
-        <app-hechos></app-hechos>
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                  required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
+        <app-hechos [formHechos]="formHechos" (infoFormularioHechos)="formHechos = $event" ></app-hechos>
     </mat-step>
-
-
-
-
 
 
 

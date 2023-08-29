@@ -110,6 +110,6 @@ export class FormPersonaComponent implements OnInit {
 
 
   valid() {
-   this.infoFormulario.emit( this.formPersona );
+   /* this.infoFormulario.emit( this.formPersona ); */
   }
 }

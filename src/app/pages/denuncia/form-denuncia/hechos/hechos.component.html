@@ -1,1 +1,75 @@
-<p>hechos works!</p>
+<form [formGroup]="formHechos">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <mat-form-field>
+            <mat-label>No. Expediente</mat-label>
+            <input matInput  type="number" placeholder="No. Expediente" formControlName="numeroExpediente">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-3">
+          <mat-form-field>
+            <mat-label>Tipo Fecha</mat-label>
+            <mat-select placeholder="Tipo de fecha" formControlName="tipoFecha"   >
+              <mat-option value="EXACTA"  (click)="cambioFecha('EXACTA')">EXACTA</mat-option>
+              <mat-option value="APROXIMADA"  (click)="cambioFecha('APROXIMADA')">APROXIMADA</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div *ngIf="formHechos.get('tipoFecha').value === 'EXACTA' " class="col-sm-6">
+          <mat-form-field>
+              <mat-label>Fecha</mat-label>
+              <input matInput type="date" placeholder="Fecha" formControlName="fecha" >
+          </mat-form-field>
+        </div>
+        
+        <div   *ngIf="formHechos.get('tipoFecha').value === 'APROXIMADA' " class="col-sm-3" >
+          <mat-form-field>
+              <mat-label>Mes</mat-label>
+              <input matInput type="number" placeholder="Fecha"  >
+          </mat-form-field>
+        </div>
+        <div   *ngIf="formHechos.get('tipoFecha').value === 'APROXIMADA' " class="col-sm-3" >
+          <mat-form-field>
+              <mat-label>Año</mat-label>
+              <input matInput type="number" placeholder="Fecha"  >
+          </mat-form-field>
+        </div>
+
+      </div>
+  
+      <div class="row">
+        <div class="col-sm">
+          <mat-form-field>
+            <mat-label>Lugar Hechos</mat-label>
+            <input matInput   placeholder="Lugar Hechos" formControlName="lugar" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <mat-form-field>
+            <mat-label>Hechos</mat-label>
+            <input matInput placeholder="Hechos" formControlName="hechos">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+    </div>
+
+    
+    <div class="text-center ">
+      <!-- <button mat-button matStepperNext>Next</button> -->
+      <div class="button-option">
+        <button mat-fab color="primary"   matStepperNext (click)="valid()">
+          <mat-icon>keyboard_tab</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <pre>{{ formHechos.value | json}}</pre>
